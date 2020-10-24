@@ -15,8 +15,14 @@ import {
   SocialIcons,
   SocialIconLink
 } from './FooterElements';
+import { animateScroll as scroll } from 'react-scroll';
 
 const Footer = () => {
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <FooterContainer>
       <FooterWrap>
@@ -62,10 +68,10 @@ const Footer = () => {
 
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>
+            <SocialLogo to='/'  onClick={toggleHome}>
               dolla
             </SocialLogo>
-            <WebsiteRights>dolla &copy; 2020 All rights reserved</WebsiteRights>
+            <WebsiteRights>dolla &copy;2020 All rights reserved</WebsiteRights>
             <SocialIcons>
               <SocialIconLink href='/' target='_blank' aria-label='facebook'>
                 <FaFacebook />
